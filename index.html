@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Cheat Info - Gotta Understand 'Em All!</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Version Banner -->
+    <div class="version-banner">
+        <div class="container">
+            <div class="row align-items-center g-2">
+                <div class="col-12 col-lg-8">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start gap-2">
+                        <span class="badge-version">Current: v2025-06-18</span>
+                        <span class="separator d-none d-md-inline">|</span>
+                        <span><strong>📢 New Release:</strong> Protocol v2025-11-25 launching November 25, 2025!</span>
+                        <span class="separator d-none d-md-inline">|</span>
+                        <span class="disclaimer">Unofficial cheat sheet</span>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="text-center text-lg-end">
+                        <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener" class="official-link">
+                            📚 Official Documentation →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-center text-white">
+        <div class="container py-5">
+            <h1 class="display-3 pixel-font mb-3">MCP Cheat Info</h1>
+            <p class="lead mb-4">Gotta Understand 'Em All!</p>
+            <p class="subtitle">Model Context Protocol: An open-source standard for connecting AI applications to external systems</p>
+            <div class="pokeball-divider my-4"></div>
+        </div>
+    </header>
+
+    <!-- Analogy Section -->
+    <section class="analogy-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">The Pokémon Analogy</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="analogy-card">
+                        <div class="card-icon">🎮</div>
+                        <h3>Player</h3>
+                        <p class="mcp-term">MCP Host</p>
+                        <p class="description">The AI application (like Claude Desktop or VS Code) that coordinates everything</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="analogy-card">
+                        <div class="card-icon">⚪</div>
+                        <h3>Pokéball</h3>
+                        <p class="mcp-term">MCP Client</p>
+                        <p class="description">Maintains one-to-one connection with each server, obtains context for the host</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="analogy-card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Pokémon</h3>
+                        <p class="mcp-term">MCP Server</p>
+                        <p class="description">Program that provides context through tools, resources, and prompts</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="analogy-card">
+                        <div class="card-icon">💫</div>
+                        <h3>Moves</h3>
+                        <p class="mcp-term">Primitives</p>
+                        <p class="description">Tools (actions), Resources (data), and Prompts (templates)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Reference Cards -->
+    <section class="cards-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">MCP Quick Reference</h2>
+            <div class="row g-4">
+                <!-- MCP Server Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="pokemon-card">
+                        <div class="card-header-custom">
+                            <span class="card-type">Server</span>
+                            <span class="card-hp">⚡ Core</span>
+                        </div>
+                        <div class="card-body-custom">
+                            <h4>MCP Server</h4>
+                            <div class="stats">
+                                <div class="stat-item">
+                                    <strong>Definition:</strong> Program that provides context to MCP clients
+                                </div>
+                                <div class="stat-item">
+                                    <strong>Location:</strong> Can run locally (stdio) or remotely (HTTP)
+                                </div>
+                                <div class="stat-item">
+                                    <strong>Primitives:</strong> Exposes tools, resources, and prompts
+                                </div>
+                            </div>
+                            <div class="abilities">
+                                <div class="ability-tag">Tools</div>
+                                <div class="ability-tag">Resources</div>
+                                <div class="ability-tag">Prompts</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="pokemon-card">
+                        <div class="card-header-custom">
+                            <span class="card-type">Client</span>
+                            <span class="card-hp">🔗 Bridge</span>
+                        </div>
+                        <div class="card-body-custom">
+                            <h4>MCP Client</h4>
+                            <div class="stats">
+                                <div class="stat-item">
+                                    <strong>Definition:</strong> Component that maintains connection to an MCP server
+                                </div>
+                                <div class="stat-item">
+                                    <strong>Relationship:</strong> One-to-one with each server
+                                </div>
+                                <div class="stat-item">
+                                    <strong>Purpose:</strong> Obtains context from server for the host
+                                </div>
+                            </div>
+                            <div class="abilities">
+                                <div class="ability-tag">Connect</div>
+                                <div class="ability-tag">Discover</div>
+                                <div class="ability-tag">Invoke</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Host Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="pokemon-card">
+                        <div class="card-header-custom">
+                            <span class="card-type">Host</span>
+                            <span class="card-hp">👤 Control</span>
+                        </div>
+                        <div class="card-body-custom">
+                            <h4>MCP Host</h4>
+                            <div class="stats">
+                                <div class="stat-item">
+                                    <strong>Definition:</strong> The AI application that coordinates MCP clients
+                                </div>
+                                <div class="stat-item">
+                                    <strong>Examples:</strong> Claude Desktop, VS Code, Claude Code
+                                </div>
+                                <div class="stat-item">
+                                    <strong>Role:</strong> Creates one client per server connection
+                                </div>
+                            </div>
+                            <div class="abilities">
+                                <div class="ability-tag">Coordinate</div>
+                                <div class="ability-tag">Manage</div>
+                                <div class="ability-tag">Configure</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="pokemon-card">
+                        <div class="card-header-custom">
+                            <span class="card-type">Tools</span>
+                            <span class="card-hp">🔧 Primitive</span>
+                        </div>
+                        <div class="card-body-custom">
+                            <h4>Tools Primitive</h4>
+                            <div class="stats">
+                                <div class="stat-item">
+                                    <strong>Definition:</strong> Executable functions AI can invoke to perform actions
+                                </div>
+                                <div class="stat-item">
+                                    <strong>Methods:</strong> tools/list, tools/call, notifications/tools/list_changed
+                                </div>
+                                <div class="stat-item">
+                                    <strong>Examples:</strong> Database queries, API calls, file operations
+                                </div>
+                            </div>
+                            <div class="abilities">
+                                <div class="ability-tag">List</div>
+                                <div class="ability-tag">Call</div>
+                                <div class="ability-tag">Notify</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resources Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="pokemon-card">
+                        <div class="card-header-custom">
+                            <span class="card-type">Resources</span>
+                            <span class="card-hp">📦 Primitive</span>
+                        </div>
+                        <div class="card-body-custom">
+                            <h4>Resources Primitive</h4>
+                            <div class="stats">
+                                <div class="stat-item">
+                                    <strong>Definition:</strong> Data sources that provide contextual information to AI
+                                </div>
+                                <div class="stat-item">
+                                    <strong>Methods:</strong> resources/list, resources/read, resources/subscribe
+                                </div>
+                                <div class="stat-item">
+                                    <strong>Examples:</strong> File contents, database records, API responses
+                                </div>
+                            </div>
+                            <div class="abilities">
+                                <div class="ability-tag">List</div>
+                                <div class="ability-tag">Read</div>
+                                <div class="ability-tag">Subscribe</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prompts Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="pokemon-card">
+                        <div class="card-header-custom">
+                            <span class="card-type">Prompts</span>
+                            <span class="card-hp">💬 Primitive</span>
+                        </div>
+                        <div class="card-body-custom">
+                            <h4>Prompts Primitive</h4>
+                            <div class="stats">
+                                <div class="stat-item">
+                                    <strong>Definition:</strong> Reusable templates that structure LLM interactions
+                                </div>
+                                <div class="stat-item">
+                                    <strong>Methods:</strong> prompts/list, prompts/get
+                                </div>
+                                <div class="stat-item">
+                                    <strong>Examples:</strong> System prompts, few-shot examples, workflows
+                                </div>
+                            </div>
+                            <div class="abilities">
+                                <div class="ability-tag">List</div>
+                                <div class="ability-tag">Get</div>
+                                <div class="ability-tag">Parameterize</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Flow -->
+    <section class="flow-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">How It All Works Together</h2>
+            <div class="flow-diagram">
+                <div class="flow-item">
+                    <div class="flow-icon">🎮</div>
+                    <h5>MCP Host</h5>
+                    <p>AI Application (e.g., Claude Desktop)</p>
+                </div>
+                <div class="flow-arrow">
+                    creates<br><span class="arrow-icon">↓</span>
+                </div>
+                <div class="flow-item">
+                    <div class="flow-icon">⚪</div>
+                    <h5>MCP Client(s)</h5>
+                    <p>One per server connection</p>
+                </div>
+                <div class="flow-arrow">
+                    connects to<br><span class="arrow-icon">↓</span>
+                </div>
+                <div class="flow-item">
+                    <div class="flow-icon">⚡</div>
+                    <h5>MCP Server(s)</h5>
+                    <p>Exposes primitives via JSON-RPC 2.0</p>
+                </div>
+                <div class="flow-arrow">
+                    provides<br><span class="arrow-icon">↓</span>
+                </div>
+                <div class="flow-item">
+                    <div class="flow-icon">💫</div>
+                    <h5>Primitives</h5>
+                    <p>Tools, Resources, Prompts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Concepts -->
+    <section class="concepts-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Key Concepts</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="concept-box">
+                        <h4>🏗️ Architecture Layers</h4>
+                        <ul>
+                            <li><strong>Data Layer:</strong> JSON-RPC 2.0 protocol for communication</li>
+                            <li><strong>Transport Layer:</strong> Stdio (local) or HTTP (remote)</li>
+                            <li><strong>Stateful Protocol:</strong> Lifecycle and capability negotiation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="concept-box">
+                        <h4>🔄 Lifecycle Management</h4>
+                        <ul>
+                            <li><strong>Initialize:</strong> Capability negotiation (protocolVersion: 2025-06-18)</li>
+                            <li><strong>Ready:</strong> Server accepts primitive requests</li>
+                            <li><strong>Notifications:</strong> Real-time updates for list changes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="concept-box">
+                        <h4>🎯 Core Primitives</h4>
+                        <ul>
+                            <li><strong>Server Primitives:</strong> Tools, Resources, Prompts</li>
+                            <li><strong>Client Primitives:</strong> Sampling, Elicitation, Logging</li>
+                            <li><strong>Discovery Pattern:</strong> */list, */get, tools/call methods</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="concept-box">
+                        <h4>🌐 Transport Options</h4>
+                        <ul>
+                            <li><strong>Stdio:</strong> Local servers, no network overhead</li>
+                            <li><strong>Streamable HTTP:</strong> Remote servers with SSE support</li>
+                            <li><strong>Authentication:</strong> Bearer tokens, API keys, OAuth</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section text-center text-white py-4">
+        <div class="container">
+            <p class="mb-2">🎴 Your Pokémon-Style MCP Cheat Sheet Reference</p>
+            <p class="mb-3">An open-source standard for connecting AI applications to external systems</p>
+            <div class="pokeball-divider small my-3"></div>
+            <p class="small mb-2">
+                <strong>Unofficial community resource</strong> • For official documentation visit 
+                <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener" class="footer-link">modelcontextprotocol.io</a>
+            </p>
+            <p class="small">© 2025 MCP-Cheat.info | Built for the MCP Community with ⚡</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
